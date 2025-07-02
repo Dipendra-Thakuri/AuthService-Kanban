@@ -81,22 +81,22 @@ public class UserController {
         }
     }
 
-    // ✅ Get User Profile
-    @GetMapping("/user/profile")
-    public ResponseEntity<?> getUserProfile(HttpServletRequest request) {
-        try {
-            String username = (String) request.getAttribute("username");
-            User user = userService.getUserProfile(username);
-
-            Map<String, Object> profileResponse = new HashMap<>();
-            profileResponse.put("userId", user.getUserId());
-            profileResponse.put("username", user.getUsername());
-            profileResponse.put("email", user.getEmail());
-            profileResponse.put("role", user.getRole());
-
-            return ResponseEntity.ok(profileResponse);
-        } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-        }
-    }
+//    // ✅ Get User Profile
+//    @GetMapping("/user/profile")
+//    public ResponseEntity<?> getUserProfile(HttpServletRequest request) {
+//        try {
+//            String username = (String) request.getAttribute("username");
+//            User user = userService.getUserProfile(username);
+//
+//            Map<String, Object> profileResponse = new HashMap<>();
+//            profileResponse.put("userId", user.getUserId());
+//            profileResponse.put("username", user.getUsername());
+//            profileResponse.put("email", user.getEmail());
+//            profileResponse.put("role", user.getRole());
+//
+//            return ResponseEntity.ok(profileResponse);
+//        } catch (UserNotFoundException e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+//        }
+//    }
 }
